@@ -1,0 +1,36 @@
+<div id="popupcart_extended">   
+	<div class="head">Корзина покупок<i class="fa fa-close" onclick="$('#popupcart_extended').popup('hide')" ></i></div>
+			<div class="empty">В вашей корзине пусто!</div>
+		<input type="hidden" name="addtocart_logic" value="1" />
+	<input type="hidden" name="click_on_cart" value="1" />
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#popupcart_extended').popup({transition: 'all 0.3s',	scrolllock: true});	
+});
+
+function carousel () {
+	$('.related_product').owlCarousel({
+		responsiveBaseWidth: '.related_product',
+		navigation: true,
+		slideSpeed: 200,
+		paginationSpeed: 300,
+		touchDrag: true,
+		mouseDrag: false,
+		navigationText: ['&lt;', '&gt;'],
+		pagination: false,
+	});
+}
+
+function p_array() {
+	}
+
+function replace_button(product_id, options){
+	if(options && $('.'+product_id).attr('id') == 'button-cart') {
+		var text = 'Купить ещё';
+	} else {
+		var text = 'В корзине';
+	}
+			$('html, body').find('.'+product_id).val(text).text(text).addClass('in_cart');
+	}
+</script>

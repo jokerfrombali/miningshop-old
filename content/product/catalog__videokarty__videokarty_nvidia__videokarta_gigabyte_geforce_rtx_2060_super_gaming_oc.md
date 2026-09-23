@@ -1,0 +1,47 @@
+---
+url: "https://miningshop.ru/catalog/videokarty/videokarty_nvidia/videokarta_gigabyte_geforce_rtx_2060_super_gaming_oc/"
+archived_at: "2023-02-08"
+archive_url: "https://web.archive.org/web/20230208131322/https://miningshop.ru/catalog/videokarty/videokarty_nvidia/videokarta_gigabyte_geforce_rtx_2060_super_gaming_oc/"
+local_copy: "mirror/catalog/videokarty/videokarty_nvidia/videokarta_gigabyte_geforce_rtx_2060_super_gaming_oc/index.html"
+title: "Купить видеокарты MSI GeForce RTX 2060 SUPER VENTUS OC недорого, для создания майнинг фермы."
+meta_description: "Видеокарты MSI GeForce RTX 2060 SUPER VENTUS OC для майнинга популярных криптовалют. Хорошее Хорошее бюджетное решение с эффективным охлаждением. Официальная гарантия, профессиональные консультации, бесплатная техподдержка."
+h1: "Видеокарта Gigabyte GeForce RTX 2060 SUPER GAMING OC"
+breadcrumbs: [{"name": "Главная", "url": "https://miningshop.ru/"}, {"name": "Каталог", "url": "https://miningshop.ru/catalog/"}, {"name": "Видеокарты", "url": "https://miningshop.ru/catalog/videokarty/"}, {"name": "Видеокарты NVIDIA", "url": "https://miningshop.ru/catalog/videokarty/videokarty_nvidia/"}, {"name": "Видеокарта Gigabyte GeForce RTX 2060 SUPER GAMING OC", "url": "https://miningshop.ru/catalog/videokarty/videokarty_nvidia/videokarta_gigabyte_geforce_rtx_2060_super_gaming_oc/"}]
+name: "Видеокарта Gigabyte GeForce RTX 2060 SUPER GAMING OC"
+price_rub: 28700.0
+availability: "InStock"
+sku: "Обновлено"
+specs: {"Объем памяти": "8 Гб", "Значения хешрейта": "42.25", "Потребление": "110", "Доходность": "0", "Окупаемость": "INF"}
+images: ["https://miningshop.ru/upload/iblock/44e/9zty28af87srkskrkpjre086gnjhsbep.jpg", "https://miningshop.ru/upload/iblock/b90/hcxd43dn8rttpsih6qlvkhpw9zl9bwmm.png", "https://miningshop.ru/upload/iblock/472/3m436n20fa8e2dfv3d4c80h8s1yjalq5.png", "https://miningshop.ru/upload/iblock/58e/cz1l7en65bezhzgcdfhpe15tmctpv2g0.png", "https://miningshop.ru/upload/iblock/5e6/wy6pjoxye2ph8o2t94jepee821jeiajj.png", "https://miningshop.ru/upload/iblock/ba4/920wkcmr0sfl0ujvk2xxsievbp8kh8zj.png", "https://miningshop.ru/upload/iblock/26b/7btk7qo9l1vovjybrbjkjqio4a4beu76.png", "https://miningshop.ru/upload/iblock/19b/3af9cz441tmds5px9cp0h30evlbyvogk.png"]
+category_path: ["Каталог", "Видеокарты", "Видеокарты NVIDIA"]
+images_local: [null, "mirror/upload/resize_cache/iblock/b90/400_400_140cd750bba9870f18aada2478b24840a/hcxd43dn8rttpsih6qlvkhpw9zl9bwmm.png", "mirror/upload/resize_cache/iblock/472/400_400_140cd750bba9870f18aada2478b24840a/3m436n20fa8e2dfv3d4c80h8s1yjalq5.png", "mirror/upload/resize_cache/iblock/58e/400_400_140cd750bba9870f18aada2478b24840a/cz1l7en65bezhzgcdfhpe15tmctpv2g0.png", "mirror/upload/resize_cache/iblock/5e6/400_400_140cd750bba9870f18aada2478b24840a/wy6pjoxye2ph8o2t94jepee821jeiajj.png", "mirror/upload/iblock/ba4/920wkcmr0sfl0ujvk2xxsievbp8kh8zj.png", null, null]
+type: "product"
+---
+
+## Характеристики
+
+| Параметр | Значение |
+|---|---|
+| Объем памяти | 8 Гб |
+| Значения хешрейта | 42.25 |
+| Потребление | 110 |
+| Доходность | 0 |
+| Окупаемость | INF |
+
+## Описание
+
+Бренд MSI хорошо известен на рынке компьютерных комплектующих, в первую очередь - благодаря своим видеокартам и специальному программному обеспечению для их настройки и “разгона” - повышения производительности. Продукция бренда надежна, а потому активно используется в майнинге криптовалют. В частности, популярностью у владельцев ферм пользуется линейка MSI VENTUS, в которой надежность и быстродействие поставлены на первое место. При этом производитель отказался от сложного дизайна и ряда других решений, которые повышали стоимость, не давая графическим ускорителям каких либо значимых практических преимуществ.
+
+GeForce RTX 2060 SUPER - появилась в продаже в 2019 году. Она относится к так называемой 20 серии игровых видеокарт, в которой впервые была применена новая версия процессорной архитектуры, названная в честь известного физика Алана Тьюринга. Применение усовершенствованных стриминговых сопроцессоров и использование новых видов ядер позволило повысить производительность и обеспечить высокую энергоэффективность. Карта MSI GeForce RTX 2060 SUPER VENTUS также снабжается 8 гигабайтами современного стандарта GDDR6, а индекс OC обозначает, что она получает дополнительный заводской разгон.
+
+*Это важно: Объем ОЗУ - очень важная характеристика, так как для майнинга целого ряда валют в память видеокарты нужно загружать специальный DAG-файл. Для самой популярной монеты, эфириума, его объем приближается к 5 гб. При текущей скорости роста объем в 8 гб обеспечивает возможность майнинга эфира на карте GeForce RTX 2060 SUPER вплоть до 2027 года.*
+
+Хорошая видеокарта для майнинга должна иметь эффективную систему охлаждения, иначе ее производительность может пострадать в результате перегрева. У модели MSI GeForce RTX 2060 SUPER VENTUS OC за отвод тепла отвечают два вентилятора TORX FAN 2.0 с комбинированной крыльчаткой. Она включает обычные и дисперсионные лопасти, что позволяет повысить плотность воздушного потока, охлаждающего радиатор, сделать его более направленным. Кроме того, в системе охлаждения карты используются:
+
+Данные решения эффективно предотвращают перегрев, помогают сохранить риг холодным. Увеличенное содержание меди в печатной плате также способствует более эффективному распределению тепла, а также помогает быстрее и точнее передавать сигналы, а металлическая задняя панель дает защиту от физических повреждений.
+
+Графические ускорители с чипами Nvidia традиционно считаются универсальными, так как они хорошо работают с большинством популярных криптоалгоритмов. Это особенно важно на фоне новостей о скором переходе валюты Эфириум, второй по капитализации на сегодня, на алгоритм “Доказательство владения”, где будет важна не мощность видеокарт, а количество монет, накопленных у пользователя. Если это случится - пользователям придется перенастраивать фермы на другую валюту. Видеокарта MSI GeForce RTX 2060 SUPER VENTUS OC позволит это сделать. Она выдает такие результаты на самых популярных алгоритмах:
+
+Купить видеокарту MSI GeForce RTX 2060 SUPER VENTUS OC и другое оборудование для майнинга Вы сможете в нашем магазине. МайнингШоп - это официальная гарантия, помощь в подборе комплектующих, бесплатная техподдержка, скидки постоянным покупателям
+
+**Вывод МайнингШоп: Видеокарта MSI GeForce RTX 2060 SUPER VENTUS OC хорошо подойдет для сборки бюджетной майнинг-фермы. Она относится к старой линейке Nvidia, поэтому стоит дешевле, при этом обладает достаточными вычислительными мощностями, чтобы эффективно добывать многие популярные криптовалюты.**

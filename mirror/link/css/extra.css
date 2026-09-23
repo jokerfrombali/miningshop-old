@@ -1,0 +1,160 @@
+body {
+    font-family: 'Comfortaa', cursive;
+    font-size: 24px;
+}
+
+.background-image {
+    background-image: url("../img/bg.png");
+    background-position: center;
+    background-size: cover;
+}
+
+
+.button-image {
+    width: 20px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.btn-social {
+    padding: 10px;
+    width: 100%;
+    font-size: 24px;
+}
+
+.footer-text {
+    font-size: 40px;
+}
+
+.footer-href {
+    text-decoration: none;
+    color: white;
+    text-shadow: none;
+}
+
+.footer-href:hover {
+    transition: all 300ms;
+    text-shadow: 0px 0px 20px white;
+    color: #d3d3d3;
+}
+
+.vertical-center {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 90vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+.logo-image {
+    width: 300px;
+    height: auto;
+}
+@media screen and (max-width: 768px) {
+    .logo-image {
+        width: 200px;
+        height: auto;
+    }
+    .footer-text {
+        font-size: 40px;
+    }
+    .btn-social {
+        padding: 5px;
+        width: 100%;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+
+.gray-test {
+    background-color: #e5e5e5;
+    border-color: #b9b9b9;
+    color: #1a1e21;
+}
+
+.gray-test:hover {
+    background-color: #e1e1e1;
+    border-color: #a8a8a8;
+    box-shadow: #d0d0d0 0 0 20px 2px;
+    transition: all 300ms;
+    color: #1a1e21;
+}
+
+.telegram {
+    background-color: #0dcaf0;
+    border-color: #0a53be;
+    color: #1a1e21;
+}
+
+.telegram:hover {
+    border-color: #0a53be;
+    background-color: #05a8c9;
+    box-shadow: #0d6efd 0px 0px 20px 2px;
+    transition: all 300ms;
+}
+
+.whatsapp {
+    background-color: #00f14a;
+    border-color: #009635;
+    color: #1a1e21;
+}
+
+.whatsapp:hover {
+    background-color: #009f2f;
+    border-color: #009635;
+    box-shadow: #00ff77 0px 0px 20px 2px;
+    transition: all 300ms;
+}
+
+.facebook {
+    background-color: #00f14a;
+    border-color: #009635;
+    color: #1a1e21;
+}
+
+.facebook:hover {
+    background-color: #009f2f;
+    border-color: #009635;
+    box-shadow: #00ff77 0px 0px 20px 2px;
+    transition: all 300ms;
+}
+
+.instagram {
+    background-color: #00f14a;
+    border-color: #009635;
+    color: #1a1e21;
+}
+
+.instagram:hover {
+    background-color: #009f2f;
+    border-color: #009635;
+    box-shadow: #00ff77 0px 0px 20px 2px;
+    transition: all 300ms;
+}
+
+.vk {
+    background-color: #00f14a;
+    border-color: #009635;
+    color: #1a1e21;
+}
+
+.vk:hover {
+    background-color: #009f2f;
+    border-color: #009635;
+    box-shadow: #00ff77 0px 0px 20px 2px;
+    transition: all 300ms;
+}
+
+.youtube {
+    background-color: #00f14a;
+    border-color: #009635;
+    color: #1a1e21;
+}
+
+.youtube:hover {
+    background-color: #009f2f;
+    border-color: #009635;
+    box-shadow: #00ff77 0px 0px 20px 2px;
+    transition: all 300ms;
+}
+

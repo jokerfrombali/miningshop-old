@@ -1,0 +1,206 @@
+# As a condition of accessing this website, you agree to abide by the following
+# content signals:
+
+# (a)  If a Content-Signal = yes, you may collect content for the corresponding
+#      use.
+# (b)  If a Content-Signal = no, you may not collect content for the
+#      corresponding use.
+# (c)  If the website operator does not include a Content-Signal for a
+#      corresponding use, the website operator neither grants nor restricts
+#      permission via Content-Signal with respect to the corresponding use.
+
+# The content signals and their meanings are:
+
+# search:   building a search index and providing search results (e.g., returning
+#           hyperlinks and short excerpts from your website's contents). Search does not
+#           include providing AI-generated search summaries.
+# ai-input: inputting content into one or more AI models (e.g., retrieval
+#           augmented generation, grounding, or other real-time taking of content for
+#           generative AI search answers).
+# ai-train: training or fine-tuning AI models.
+# use:      how AI systems may consume the content (immediate, reference, or full).
+
+# ANY RESTRICTIONS EXPRESSED VIA CONTENT SIGNALS ARE EXPRESS RESERVATIONS OF
+# RIGHTS UNDER ARTICLE 4 OF THE EUROPEAN UNION DIRECTIVE 2019/790 ON COPYRIGHT
+# AND RELATED RIGHTS IN THE DIGITAL SINGLE MARKET.
+
+# BEGIN Cloudflare Managed content
+
+User-agent: *
+Content-Signal: search=yes,ai-train=no,use=reference
+Allow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CloudflareBrowserRenderingCrawler
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+# END Cloudflare Managed Content
+
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /profile
+Disallow: /_next/
+
+User-Agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Twitterbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: facebookexternalhit
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Yandex
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 2
+
+User-Agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: ClaudeBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Claude-Web
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: anthropic-ai
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Claude-User
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Perplexity-User
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: Google-Extended
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: YandexAdditional
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+User-Agent: CCBot
+Disallow: /
+
+User-Agent: Bytespider
+Disallow: /
+
+User-Agent: Amazonbot
+Disallow: /
+
+User-Agent: Applebot-Extended
+Disallow: /
+
+User-Agent: cohere-ai
+Disallow: /
+
+User-Agent: Diffbot
+Disallow: /
+
+User-Agent: FacebookBot
+Disallow: /
+
+User-Agent: Meta-ExternalAgent
+Disallow: /
+
+User-Agent: Meta-ExternalFetcher
+Disallow: /
+
+User-Agent: Omgilibot
+Disallow: /
+
+User-Agent: Omgili
+Disallow: /
+
+User-Agent: PetalBot
+Disallow: /
+
+User-Agent: ImagesiftBot
+Disallow: /
+
+User-Agent: Timpibot
+Disallow: /
+
+User-Agent: Webzio-Extended
+Disallow: /
+
+User-Agent: YouBot
+Disallow: /
+
+Host: https://miningshop.ru
+Sitemap: https://miningshop.ru/sitemap.xml

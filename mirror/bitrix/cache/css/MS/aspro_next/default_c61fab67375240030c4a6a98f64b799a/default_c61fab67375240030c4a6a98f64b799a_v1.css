@@ -1,0 +1,11 @@
+
+
+/* Start:/bitrix/templates/aspro_next/components/bitrix/iblock.vote/element_rating/style.css?1634128772341*/
+.iblock-vote table td div { cursor: pointer; background: url('../../../../../templates/aspro_next/images/ai.png') -374px -51px no-repeat; width:19px; height:16px; overflow:hidden; }
+div.star-voted, div.star-over { }
+.iblock-vote table td div.star-empty { background-position:-393px -51px; }
+.iblock-vote table td div.star-over { background-position:-374px -51px;}
+
+
+/* End */
+/* /bitrix/templates/aspro_next/components/bitrix/iblock.vote/element_rating/style.css?1634128772341 */

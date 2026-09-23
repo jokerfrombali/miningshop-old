@@ -1,0 +1,5 @@
+
+; /* Start:"a:4:{s:4:"full";s:90:"/local/templates/aspro_next/components/bitrix/news.detail/news/script.min.js?1653434934698";s:6:"source";s:72:"/local/templates/aspro_next/components/bitrix/news.detail/news/script.js";s:3:"min";s:0:"";s:3:"map";s:0:"";}"*/
+$(document).ready(function(){$(".docs-block .blocks").length&&$(".docs-block .blocks .inner-wrapper").sliceHeight({row:".blocks",item:".inner-wrapper"}),$(".projects.item-views").length&&($(".projects.item-views .item .image").sliceHeight({lineheight:-3}),$(".projects.item-views .item").sliceHeight()),$(".items-services .item").sliceHeight(),SetFixedAskBlock()}),BX.addCustomEvent("onSlideInit",function(e){try{if(ignoreResize.push(!0),e){var i=e.slider;i.hasClass("small_slider")&&$(".detail .small-gallery-block .item").sliceHeight({lineheight:-3}),i.hasClass("big_slider")&&$(".detail .big_slider .item").sliceHeight({lineheight:-3})}$(window).resize()}catch(s){}finally{ignoreResize.pop()}});
+/* End */
+;; /* /local/templates/aspro_next/components/bitrix/news.detail/news/script.min.js?1653434934698*/

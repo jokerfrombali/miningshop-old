@@ -1,0 +1,10 @@
+# Исходные копии страниц до переписывания ссылок: дублируют mirror/, восстанавливаются
+# повторным запуском _work/fetch.py по manifest.jsonl
+_work/mirror_raw/
+
+# Рабочий мусор
+_work/samples/
+_work/*.log
+_work/rewrite_done.txt
+__pycache__/
+*.pyc

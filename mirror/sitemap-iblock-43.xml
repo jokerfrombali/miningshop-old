@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://miningshop.ru/projects/</loc><lastmod>2020-10-20T16:25:47+03:00</lastmod></url></urlset>

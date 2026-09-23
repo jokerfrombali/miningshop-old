@@ -1,0 +1,801 @@
+<div id="comp_168cc356f94796e48841e4d3e31b6260"><script>
+BX.ready( function(){
+	if(BX.viewImageBind)
+	{
+		BX.viewImageBind(
+			'blg-comment-1497',
+			false,
+			{tag:'IMG', attr: 'data-bx-image'}
+		);
+	}
+});
+</script>
+<div class="blog-comments" id="blg-comment-1497">
+<a name="comments"></a>
+<script>
+function onLightEditorShow(content)
+{
+	if (!window.oBlogComLHE)
+		return BX.addCustomEvent(window, 'LHE_OnInit', function(){setTimeout(function(){onLightEditorShow(content);},	500);});
+
+	oBlogComLHE.SetContent(content || '');
+	oBlogComLHE.CreateFrame(); // We need to recreate editable frame after reappending editor container
+	oBlogComLHE.SetEditorContent(oBlogComLHE.content);
+	oBlogComLHE.SetFocus();
+}
+
+function showComment(key, error, userName, userEmail, needData)
+{
+	subject = '';
+	comment = '';
+
+	if(needData == "Y")
+	{
+		subject = window["title"+key];
+		comment = window["text"+key];
+	}
+
+	var pFormCont = BX('form_c_del');
+	BX('form_comment_' + key).appendChild(pFormCont); // Move form
+	pFormCont.style.display = "block";
+
+	document.form_comment.parentId.value = key;
+	document.form_comment.edit_id.value = '';
+	document.form_comment.act.value = 'add';
+	document.form_comment.post.value = 'Отправить';
+	document.form_comment.action = document.form_comment.action + "#" + key;
+
+	if(error == "Y")
+	{
+		if(comment.length > 0)
+		{
+			comment = comment.replace(/\/</gi, '<');
+			comment = comment.replace(/\/>/gi, '>');
+		}
+		if(userName.length > 0)
+		{
+			userName = userName.replace(/\/</gi, '<');
+			userName = userName.replace(/\/>/gi, '>');
+			document.form_comment.user_name.value = userName;
+		}
+		if(userEmail.length > 0)
+		{
+			userEmail = userEmail.replace(/\/</gi, '<');
+			userEmail = userEmail.replace(/\/>/gi, '>');
+			document.form_comment.user_email.value = userEmail;
+		}
+		if(subject && subject.length>0 && document.form_comment.subject)
+		{
+			subject = subject.replace(/\/</gi, '<');
+			subject = subject.replace(/\/>/gi, '>');
+			document.form_comment.subject.value = subject;
+		}
+	}
+
+	files = BX('form_comment')["UF_BLOG_COMMENT_DOC[]"];
+	if(files !== null && typeof files != 'undefined')
+	{
+		if(!files.length)
+		{
+			BX.remove(files);
+		}
+		else
+		{
+			for(i = 0; i < files.length; i++)
+				BX.remove(BX(files[i]));
+		}
+	}
+	filesForm = BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'file-placeholder-tbody' }, true, false);
+	if(filesForm !== null && typeof filesForm != 'undefined')
+		BX.cleanNode(filesForm, false);
+
+	filesForm = BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'feed-add-photo-block' }, true, true);
+	if(filesForm !== null && typeof filesForm != 'undefined')
+
+	{
+		for(i = 0; i < filesForm.length; i++)
+		{
+			if(BX(filesForm[i]).parentNode.id != 'file-image-template')
+				BX.remove(BX(filesForm[i]));
+		}
+	}
+
+	filesForm = BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'file-selectdialog' }, true, false);
+	if(filesForm !== null && typeof filesForm != 'undefined')
+	{
+		BX.hide(BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'file-selectdialog' }, true, false));
+		BX.show(BX('blog-upload-file'));
+	}
+
+	onLightEditorShow(comment);
+	return false;
+}
+
+function editComment(key)
+{
+	subject = window["title"+key];
+	comment = window["text"+key];
+
+	if(comment.length > 0)
+	{
+		comment = comment.replace(/\/</gi, '<');
+		comment = comment.replace(/\/>/gi, '>');
+	}
+
+	var pFormCont = BX('form_c_del');
+	BX('form_comment_' + key).appendChild(pFormCont); // Move form
+	pFormCont.style.display = "block";
+
+	files = BX('form_comment')["UF_BLOG_COMMENT_DOC[]"];
+	if(files !== null && typeof files != 'undefined')
+	{
+		if(!files.length)
+		{
+			BX.remove(files);
+		}
+		else
+		{
+			for(i = 0; i < files.length; i++)
+				BX.remove(BX(files[i]));
+		}
+	}
+	filesForm = BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'file-placeholder-tbody' }, true, false);
+	if(filesForm !== null && typeof filesForm != 'undefined')
+		BX.cleanNode(filesForm, false);
+
+	filesForm = BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'feed-add-photo-block' }, true, true);
+	if(filesForm !== null && typeof filesForm != 'undefined')
+
+	{
+		for(i = 0; i < filesForm.length; i++)
+		{
+			if(BX(filesForm[i]).parentNode.id != 'file-image-template')
+				BX.remove(BX(filesForm[i]));
+		}
+	}
+
+	filesForm = BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'file-selectdialog' }, true, false);
+	if(filesForm !== null && typeof filesForm != 'undefined')
+	{
+		BX.hide(BX.findChild(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), {'className': 'file-selectdialog' }, true, false));
+		BX.show(BX('blog-upload-file'));
+	}
+
+	onLightEditorShow(comment);
+
+	document.form_comment.parentId.value = '';
+	document.form_comment.edit_id.value = key;
+	document.form_comment.act.value = 'edit';
+	document.form_comment.post.value = 'Сохранить';
+	document.form_comment.action = document.form_comment.action + "#" + key;
+
+	if(subject && subject.length > 0 && document.form_comment.subject)
+	{
+		subject = subject.replace(/\/</gi, '<');
+		subject = subject.replace(/\/>/gi, '>');
+		document.form_comment.subject.value = subject;
+	}
+	return false;
+}
+
+function waitResult(id)
+{
+	r = 'new_comment_' + id;
+	ob = BX(r);
+	if(ob.innerHTML.length > 0)
+	{
+		var obNew = BX.processHTML(ob.innerHTML, true);
+		scripts = obNew.SCRIPT;
+		BX.ajax.processScripts(scripts, true);
+		if(window.commentEr && window.commentEr == "Y")
+		{
+			BX('err_comment_'+id).innerHTML = ob.innerHTML;
+			ob.innerHTML = '';
+		}
+		else
+		{
+			if(BX('edit_id').value > 0)
+			{
+				if(BX('blg-comment-'+id))
+				{
+					BX('blg-comment-'+id+'old').innerHTML = BX('blg-comment-'+id).innerHTML;
+					BX('blg-comment-'+id+'old').id = 'blg-comment-'+id;
+					if(BX.browser.IsIE()) //for IE, numbered list not rendering well
+						setTimeout(function (){BX('blg-comment-'+id).innerHTML = BX('blg-comment-'+id).innerHTML}, 10);
+				}
+				else
+				{
+					BX('blg-comment-'+id+'old').innerHTML = ob.innerHTML;
+					if(BX.browser.IsIE()) //for IE, numbered list not rendering well
+						setTimeout(function (){BX('blg-comment-'+id+'old').innerHTML = BX('blg-comment-'+id+'old').innerHTML}, 10);
+
+				}
+			}
+			else
+			{
+				BX('new_comment_cont_'+id).innerHTML += ob.innerHTML;
+				if(BX.browser.IsIE()) //for IE, numbered list not rendering well
+					setTimeout(function (){BX('new_comment_cont_'+id).innerHTML = BX('new_comment_cont_'+id).innerHTML}, 10);
+			}
+			ob.innerHTML = '';
+			BX('form_c_del').style.display = "none";
+		}
+		window.commentEr = false;
+
+		BX.closeWait();
+		BX('post-button').disabled = false;
+		BX.onCustomEvent("onIblockCatalogCommentSubmit");
+	}
+	else
+		setTimeout("waitResult('"+id+"')", 500);
+}
+
+function submitComment()
+{
+	oBlogComLHE.SaveContent();
+	BX('post-button').focus();
+	BX('post-button').disabled = true;
+	obForm = BX('form_comment');
+			if(BX('edit_id').value > 0)
+		{
+			val = BX('edit_id').value;
+			BX('blg-comment-'+val).id = 'blg-comment-'+val+'old';
+		}
+		else
+			val = BX('parentId').value;
+		id = 'new_comment_' + val;
+		if(BX('err_comment_'+val))
+			BX('err_comment_'+val).innerHTML = '';
+
+		BX.showWait('bxlhe_frame_LHEBlogCom');
+		BX.ajax.submitComponentForm(obForm, id);
+		setTimeout("waitResult('"+val+"')", 100);
+			BX.submit(obForm);
+}
+
+function hideShowComment(url, id)
+{
+	var siteID = 'MS';
+	var bcn = BX('blg-comment-'+id);
+	BX.showWait(bcn);
+	bcn.id = 'blg-comment-'+id+'old';
+	BX('err_comment_'+id).innerHTML = '';
+	url += '&SITE_ID='+siteID;
+	BX.ajax.get(url, function(data) {
+		var obNew = BX.processHTML(data, true);
+		scripts = obNew.SCRIPT;
+		BX.ajax.processScripts(scripts, true);
+		var nc = BX('new_comment_'+id);
+		var bc = BX('blg-comment-'+id+'old');
+		nc.style.display = "none";
+		nc.innerHTML = data;
+
+		if(BX('blg-comment-'+id))
+		{
+			bc.innerHTML = BX('blg-comment-'+id).innerHTML;
+		}
+		else
+		{
+			BX('err_comment_'+id).innerHTML = nc.innerHTML;
+		}
+		BX('blg-comment-'+id+'old').id = 'blg-comment-'+id;
+
+		BX.closeWait();
+	});
+
+	return false;
+}
+
+function deleteComment(url, id)
+{
+	var siteID = 'MS';
+	BX.showWait(BX('blg-comment-'+id));
+	url += '&SITE_ID='+siteID;
+	BX.ajax.get(url, function(data) {
+		var obNew = BX.processHTML(data, true);
+		scripts = obNew.SCRIPT;
+		BX.ajax.processScripts(scripts, true);
+
+		var nc = BX('new_comment_'+id);
+		nc.style.display = "none";
+		nc.innerHTML = data;
+
+		if(BX('blg-com-err'))
+		{
+			BX('err_comment_'+id).innerHTML = nc.innerHTML;
+		}
+		else
+		{
+			BX('blg-comment-'+id).innerHTML = nc.innerHTML;
+		}
+		nc.innerHTML = '';
+
+		BX.closeWait();
+	});
+
+	return false;
+}
+
+function blogShowFile()
+{
+	el = BX('blog-upload-file');
+	if(el.style.display != 'none')
+		BX.hide(el);
+	else
+		BX.show(el);
+	BX.onCustomEvent(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), "BFileDLoadFormController");
+}
+$('.blog-add-comment .btn').on('click', function(){
+	if(!$(this).hasClass('clicked'))
+	{
+		showComment('0');
+		$(this).addClass('clicked');
+	}
+	else
+		$('#form_comment_0').slideToggle();
+})
+</script> <div id="form_comment_" style="display:none;">
+<div id="form_c_del" style="display:none;">
+<div class="blog-comment-form">
+<form method="POST" name="form_comment" id="form_comment" action="/bitrix/templates/aspro_next/components/bitrix/catalog.comments/main/bitrix/blog.post.comment/adapt/ajax.php">
+<input type="hidden" name="parentId" id="parentId" value="">
+<input type="hidden" name="edit_id" id="edit_id" value="">
+<input type="hidden" name="act" id="act" value="add">
+<input type="hidden" name="post" value="Y">
+<input type="hidden" name="IBLOCK_ID" value="45"><input type="hidden" name="ELEMENT_ID" value="8068"><input type="hidden" name="SITE_ID" value="MS"><input type="hidden" name="sessid" id="sessid" value="0b5f4ea6140ba5d1e0a7e86a4c993038" /> <div class="blog-comment-fields">
+<div class="blog-comment-field blog-comment-field-user">
+<div class="row form">
+<div class="col-md-6">
+<div class="form-group animated-labels ">
+<label for="user_name">Ваше имя <span class="required-star">*</span></label>
+<div class="input">
+<input maxlength="255" size="30" class="form-control" tabindex="3" type="text" name="user_name" id="user_name" value="">
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="form-group animated-labels ">
+<label for="user_email">E-mail</label>
+<div class="input">
+<input maxlength="255" size="30" class="form-control" tabindex="4" type="text" name="user_email" id="user_email" value="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+	var arImages = Array();
+	var arImagesId = Array();
+		</script>
+<div class="bxlhe-frame" id="bxlhe_frame_LHEBlogCom" style="width:100%; height:200px;"><table class="bxlhe-frame-table" cellspacing="0" style="height:200px; width: 100%;">
+<tr class="bxlhe-editor-toolbar-row"><td class="bxlhe-editor-buttons" style="height:27px;"><div class="lhe-stat-toolbar-cont lhe-stat-toolbar-cont-preload"></div></td></tr>
+<tr><td class="bxlhe-editor-cell" style="height:170px"></td></tr>
+<tr><td class="lhe-resize-row" style="height: 3px;"><img data-lazyload class="lazyload" id="bxlhe_resize_LHEBlogCom" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../../../../../../images/1.gif"/></td></tr>
+</table></div>
+<script>
+		function LoadLHE_LHEBlogCom()
+		{
+			function _lheScriptloaded()
+			{
+				if (!window.JCLightHTMLEditor)
+					return setTimeout(_lheScriptloaded, 10);
+
+								// User's customization scripts here
+				try{
+		LHEButtons['BlogImage'] ={
+			id : 'Image', // Standart image icon from editor-s CSS
+			name : BX.message.Image,
+			handler: function(pBut)
+			{
+				//pBut.pLEditor.OpenDialog({id : 'BlogImage', obj: false});
+				blogShowFile();
+			},
+			OnBeforeCreate: function(pLEditor, pBut)
+				{
+					// Disable in non BBCode mode in html
+					pBut.disableOnCodeView = !pLEditor.bBBCode || pLEditor.arConfig.bConvertContentFromBBCodes;
+					return pBut;
+				},
+			parser: {
+				name: 'blogimage',
+				obj: {
+					Parse: function(sName, sContent, pLEditor)
+					{
+						var i, cnt = arImages.length, j;
+						if (!pLEditor.arBlogImages)
+							pLEditor.arBlogImages = {};
+
+						for(i = 0; i < cnt; i++)
+						{
+							if (!pLEditor.arBlogImages[arImagesId[i]])
+							{
+								pLEditor.arBlogImages[arImagesId[i]] = {
+									src : arImages[i],
+									pTitle: ''
+								};
+							}
+						}
+
+						sContent = sContent.replace(/\[IMG ID=((?:\s|\S)*?)(?:\s*?WIDTH=(\d+)\s*?HEIGHT=(\d+))?\]/ig, function(str, id, width, height)
+						{
+							if (!pLEditor.arBlogImages[id])
+								return str;
+
+							width = parseInt(width);
+							height = parseInt(height);
+
+							var
+								strSize = "",
+								imageSrc = pLEditor.arBlogImages[id].src,
+								imageTitle = "";
+
+							if (width && height && pLEditor.bBBParseImageSize)
+								strSize = " width=\"" + width + "\" height=\"" + height + "\"";
+
+							return '<img data-lazyload class="lazyload" id="' + pLEditor.SetBxTag(false, {tag: "blogimage", params: {value : id}}) + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="' + imageSrc + '" title="' + imageTitle + '" ' + strSize +'>';
+						});
+						return sContent;
+					},
+					UnParse: function(bxTag, pNode, pLEditor)
+					{
+						if (bxTag.tag == 'blogimage')
+						{
+							var
+								width = parseInt(pNode.arAttributes['width']),
+								height = parseInt(pNode.arAttributes['height']),
+								strSize = "";
+
+							if (width && height  && pLEditor.bBBParseImageSize)
+								strSize = ' WIDTH=' + width + ' HEIGHT=' + height;
+
+							return '[IMG ID=' + bxTag.params.value + strSize + ']';
+						}
+						return "";
+					}
+				}
+			}
+		};
+
+
+		window.LHEDailogs['BlogImage'] = function(pObj)
+		{
+			var str =
+				'<span class="errortext" id="lhed_blog_image_error" style="display:none;"></span>' +
+				'<table width="100%"><tr>' +
+				'<td class="lhe-dialog-label lhe-label-imp">Изображение:</td>' +
+				'<td class="lhe-dialog-param">' +
+				'<'+'form id="' + pObj.pLEditor.id + 'img_upload_form" action="index__ae81199cbb.html" method="post" enctype="multipart/form-data" style="margin: 0!important; padding: 0!important;">' +
+				'<input type="hidden" name="sessid" id="sessid_1" value="0b5f4ea6140ba5d1e0a7e86a4c993038" />' +
+				'<input type="file" size="30" name="BLOG_UPLOAD_FILE" id="bx_lhed_blog_img_input" />' +
+				'<input type="hidden" value="Y" name="blog_upload_image"/>' +
+				'<input type="hidden" name="post" value="Y">' +
+				'</form>'+
+				'</td>' +
+				'</tr><tr id="' + pObj.pLEditor.id + 'lhed_blog_notice">' +
+				'<td colSpan="2" style="padding: 0 0 20px 25px !important; font-size: 11px!important;">Максимально допустимый размер загружаемой картинки <b>1Mb<\/b>.</td>' +
+			'</tr></table>';
+
+			return {
+				title: "Загрузка изображения",
+				innerHTML : str,
+				width: 500,
+				OnLoad: function()
+				{
+					pObj.pForm = false;
+					pObj.pInput = false;
+
+					pObj.pInput = BX('bx_lhed_blog_img_input');
+					pObj.pForm = BX(pObj.pLEditor.id + 'img_upload_form');
+					pObj.pLEditor.focus(pObj.pInput);
+
+					window.obLHEDialog.adjustSizeEx();
+				},
+				OnSave: function()
+				{
+					if (pObj.pInput && pObj.pForm && pObj.pInput.value != "")
+					{
+						BX.showWait('bx_lhed_blog_img_input');
+						BX('lhed_blog_image_error').style.display = 'none';
+						BX('lhed_blog_image_error').innerHTML = '';
+						BX.ajax.submit(pObj.pForm, function(){
+							BX.closeWait();
+							if (window.bxBlogImageId)
+							{
+								window.InsertBlogImage(window.bxBlogImageId, window.bxBlogImageIdWidth);
+								window.obLHEDialog.Close();
+								window.bxBlogImageId = false;
+								window.bxBlogImageIdWidth = false;
+							}
+							else if(window.bxBlogImageError)
+							{
+								BX('lhed_blog_image_error').innerHTML = window.bxBlogImageError;
+								BX('lhed_blog_image_error').style.display = 'block';
+								window.obLHEDialog.adjustSizeEx();
+							}
+						});
+
+						return false;
+					}
+				}
+			};
+		};
+
+		window.InsertBlogImage = function(imageId, width)
+		{
+			pLEditor = window.oBlogComLHE;
+			var strSize = '';
+
+			if (!pLEditor.arBlogImages[imageId])
+			{
+				var imgId = window.arImagesId[imageId-1];
+
+				var src  = window.arImages[imageId-1];
+				imageId = imgId;
+
+				if(width > 0)
+				{
+					if(pLEditor.arConfig.width && pLEditor.arConfig.width.indexOf('%') <= 0)
+						widthC = parseInt(pLEditor.arConfig.width)*0.8;
+					else
+						widthC = 500;
+					if(width > widthC)
+						strSize = ' width="80%"';
+				}
+
+				pLEditor.arBlogImages[imageId] = {
+					src : src,
+					pTitle: ''
+				};
+			}
+
+			if (pLEditor.sEditorMode == 'code' && pLEditor.bBBCode) // BB Codes
+				pLEditor.WrapWith("", "", "[IMG ID=" + imageId + "]");
+			else if(pLEditor.sEditorMode == 'html') // WYSIWYG
+			{
+				pLEditor.InsertHTML('<img data-lazyload class="lazyload" id="' + pLEditor.SetBxTag(false, {tag: "blogImage", params: {value : imageId}}) + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="' + pLEditor.arBlogImages[imageId].src + '" title="' + (pLEditor.arBlogImages[imageId].pTitle.value || "") + '"' + strSize + '>');
+				setTimeout('pLEditor.AutoResize();', 500);
+			}
+		}
+
+
+		// Rename image button and change Icon
+		LHEButtons['Image'].id = 'ImageLink';
+		LHEButtons['Image'].src = '../../../../../../../components/bitrix/blog/templates/.default/images/bbcode/font_image_upload.gif';
+		LHEButtons['Image'].name = 'Вставить ссылку на изображение';
+
+		LHEButtons['BlogInputVideo'] = {
+			id : 'BlogInputVideo',
+			src : '/bitrix/components/bitrix/blog/templates/.default/images/bbcode/font_video.gif',
+			name : 'Вставить видео',
+			title : 'Вставить видео',
+			handler: function(pBut)
+			{
+				pBut.pLEditor.OpenDialog({id : 'BlogVideo', obj: false});
+			},
+			parser: {
+				name: 'blogvideo',
+				obj: {
+					Parse: function(sName, sContent, pLEditor)
+					{
+						sContent = sContent.replace(/\[VIDEO\s*?width=(\d+)\s*?height=(\d+)\s*\]((?:\s|\S)*?)\[\/VIDEO\]/ig, function(str, w, h, src)
+						{
+							var
+								w = parseInt(w) || 400,
+								h = parseInt(h) || 300,
+								src = BX.util.trim(src);
+
+							return '<img data-lazyload id="' + pLEditor.SetBxTag(false, {tag: "blogvideo", params: {value : src}}) + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../../../../../../images/1.gif" class="lazyload bxed-video" width=' + w + ' height=' + h + ' title="' + BX.message.Video + ": " + src + '" />';
+						});
+						return sContent;
+					},
+					UnParse: function(bxTag, pNode, pLEditor)
+					{
+						if (bxTag.tag == 'blogvideo')
+						{
+							return "[VIDEO WIDTH=" + pNode.arAttributes["width"] + " HEIGHT=" + pNode.arAttributes["height"] + "]" + bxTag.params.value + "[/VIDEO]";
+						}
+						return "";
+					}
+				}
+			}
+		};
+
+		window.LHEDailogs['BlogVideo'] = function(pObj)
+		{
+			var str = '<table width="100%"><tr>' +
+				'<td class="lhe-dialog-label lhe-label-imp"><label for="' + pObj.pLEditor.id + 'lhed_blog_video_path"><b>Путь к видео:</b></label></td>' +
+				'<td class="lhe-dialog-param">' +
+				'<input id="' + pObj.pLEditor.id + 'lhed_blog_video_path" value="" size="30"/>' +
+				'</td>' +
+			'</tr><tr>' +
+				'<td></td>' +
+				'<td style="padding: 0!important; font-size: 11px!important;">Например: <i>http://www.youtube.com/watch?v=j8YcLyzJOEg<\/i> <br/> или  <i>www.mysite.com/video/my_video.mp4<\/i></td>' +
+			'</tr><tr>' +
+				'<td class="lhe-dialog-label lhe-label-imp"><label for="' + pObj.pLEditor.id + 'lhed_blog_video_width">' + BX.message.ImageSizing + ':</label></td>' +
+				'<td class="lhe-dialog-param">' +
+					'<input id="' + pObj.pLEditor.id + 'lhed_blog_video_width" value="" size="4"/>' +
+					' x ' +
+					'<input id="' + pObj.pLEditor.id + 'lhed_blog_video_height" value="" size="4" />' +
+				'</td>' +
+			'</tr></table>';
+
+			return {
+				title: "Вставить видео",
+				innerHTML : str,
+				width: 480,
+				OnLoad: function()
+				{
+					pObj.pPath = BX(pObj.pLEditor.id + "lhed_blog_video_path");
+					pObj.pWidth = BX(pObj.pLEditor.id + "lhed_blog_video_width");
+					pObj.pHeight = BX(pObj.pLEditor.id + "lhed_blog_video_height");
+
+					pObj.pLEditor.focus(pObj.pPath);
+				},
+				OnSave: function()
+				{
+					pLEditor = window.oBlogComLHE;
+
+					var
+						src = BX.util.trim(pObj.pPath.value),
+						w = parseInt(pObj.pWidth.value) || 400,
+						h = parseInt(pObj.pHeight.value) || 300;
+
+					if (src == "")
+						return;
+
+					if (pLEditor.sEditorMode == 'code' && pLEditor.bBBCode) // BB Codes
+					{
+						pLEditor.WrapWith("", "", "[VIDEO WIDTH=" + w + " HEIGHT=" + h + "]" + src + "[/VIDEO]");
+					}
+					else if(pLEditor.sEditorMode == 'html') // WYSIWYG
+					{
+						pLEditor.InsertHTML('<img data-lazyload id="' + pLEditor.SetBxTag(false, {tag: "blogvideo", params: {value : src}}) + '" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="../../../../../../../images/1.gif" class="lazyload bxed-video" width=' + w + ' height=' + h + ' title="' + BX.message.Video + ": " + src + '" />');
+						setTimeout('pLEditor.AutoResize();', 500);
+					}
+				}
+			};
+		};
+
+
+		LHEButtons['CreateLinkNC'] = {
+			id : 'CreateLinkNC',
+			src : '/bitrix/components/bitrix/blog/templates/.default/images/bbcode/font_link.gif',
+			name : 'Вставить ссылку',
+			title : 'Вставить ссылку',
+			handler: function(pBut)
+			{
+				pBut.pLEditor.OpenDialog({id : 'CreateLinkNCDialog', obj: false});
+			}
+		};
+
+		window.LHEDailogs['CreateLinkNCDialog'] = function(pObj)
+		{
+			var str = "";
+			if(document.getElementById('nocommentreason'))
+				str = document.getElementById('nocommentreason').innerHTML;
+
+			return {
+				title: "Вставить ссылку",
+				innerHTML : str,
+				width: 480,
+				OnLoad: function() {},
+				OnSave: function() {}
+			};
+		};
+
+		// Submit form by ctrl+enter
+		window.blogCommentCtrlEnterHandler = function(e)
+		{
+			submitComment();
+		};
+		}
+				catch(e){alert('Errors in customization scripts! ' + e);}
+				
+				if (
+					false ||
+					JCLightHTMLEditor.items['LHEBlogCom'] == undefined ||
+					!document.body.contains(JCLightHTMLEditor.items['LHEBlogCom'].pFrame)
+				)
+				{
+					top.oBlogComLHE = window.oBlogComLHE = new window.JCLightHTMLEditor({'id':'LHEBlogCom','content':'','bBBCode':true,'bUseFileDialogs':false,'bUseMedialib':false,'arSmiles':[{'name':'С улыбкой','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_smile.webp','code':':)','codes':':) :-)'},{'name':'Шутливо','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_wink.webp','code':';)','codes':';) ;-)'},{'name':'Широкая улыбка','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_biggrin.webp','code':':D','codes':':D :-D'},{'name':'Здорово','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_cool.webp','code':'8-)','codes':'8-)'},{'name':'Разочарование','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_facepalm.webp','code':':facepalm:','codes':':facepalm:'},{'name':'Поцелуй','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_kiss.webp','code':':{}','codes':':{} :-{}'},{'name':'Печально','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_sad.webp','code':':(','codes':':( :-('},{'name':'Скептически','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_neutral.webp','code':':|','codes':':| :-|'},{'name':'Смущенный','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_redface.webp','code':':oops:','codes':':oops:'},{'name':'Очень грустно','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_cry.webp','code':':cry:','codes':':cry: :~('},{'name':'Со злостью','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_evil.webp','code':':evil:','codes':':evil: &gt;:-&lt;'},{'name':'Удивленно','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_eek.webp','code':':o','codes':':o :-o :shock:'},{'name':'Смущенно','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_confuse.webp','code':':/','codes':':/ :-/'},{'name':'Идея','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_idea.webp','code':':idea:','codes':':idea:'},{'name':'Вопрос','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_question.webp','code':':?:','codes':':?:'},{'name':'Восклицание','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_exclaim.webp','code':':!:','codes':':!:'},{'name':'Нравится','path':'/upload/resize_cache/webp/bitrix/images/main/smiles/2/bx_smile_like.webp','code':':like:','codes':':like:'}],'arFonts':['Arial','Verdana','Times New Roman','Courier','Tahoma','Georgia','Optima','Impact','Geneva','Helvetica'],'arFontSizes':{'1':'xx-small','2':'x-small','3':'small','4':'medium','5':'large','6':'x-large','7':'xx-large'},'inputName':'comment','inputId':'comment','videoSettings':{'maxWidth':'640','maxHeight':'480','WMode':'transparent','windowless':true,'bufferLength':'20','skin':'/bitrix/components/bitrix/player/mediaplayer/skins/bitrix.swf','logo':''},'bSaveOnBlur':false,'bResizable':true,'autoResizeSaveSize':false,'bManualResize':true,'bAutoResize':true,'bReplaceTabToNbsp':true,'bSetDefaultCodeView':false,'bBBParseImageSize':true,'smileCountInToolbar':'4','bQuoteFromSelection':true,'bConvertContentFromBBCodes':false,'oneGif':'/bitrix/images/1.gif','imagePath':'/bitrix/images/fileman/light_htmledit/','height':'200','toolbarConfig':['Bold','Italic','Underline','RemoveFormat','Quote','CreateLink','DeleteLink','Image','','','Table','Justify','InsertOrderedList','InsertUnorderedList','SmileList'],'autoResizeOffset':'40','autoResizeMaxHeight':'300','bParceBBImageSize':true,'ctrlEnterHandler':'blogCommentCtrlEnterHandler'});
+					BX.onCustomEvent(window, 'LHE_ConstructorInited', [window.oBlogComLHE]);
+				}
+			}
+
+			if (!window.JCLightHTMLEditor)
+			{
+				BX.loadCSS("/bitrix/js/fileman/light_editor/light_editor.css?1634128872");
+								LHE_MESS = window.LHE_MESS = "{'Image':'Изображение','Video':'Видео','ImageSizing':'Размеры (Ш х В)'}"; (window.BX||top.BX).message({'CreateLink':'Ссылка','EditLink':'Редактировать ссылку','DialogSave':'Сохранить','DialogCancel':'Отменить','DialogClose':'Закрыть','Width':'Ширина','Height':'Высота','Source':'Режим HTML-кода','BBSource':'Режим BB-Code','On':'включено','Off':'выключено','Anchor':'Якорь','DeleteLink':'Удалить ссылку','Image':'Изображение','EditImage':'Редактировать изображение','SpecialChar':'Вставить спецсимвол','Bold':'Жирный','Italic':'Курсив','Underline':'Подчеркнутый','Strike':'Зачеркнутый','RemoveFormat':'Удалить форматирование','InsertHr':'Вставить горизонтальный разделитель','JustifyLeft':'По левому краю','JustifyCenter':'По центру','JustifyRight':'По правому краю','JustifyFull':'По ширине','Outdent':'Уменьшить отступ','Indent':'Увеличить отступ','OrderedList':'Нумерованный список','UnorderedList':'Список с маркерами','InsertTable':'Таблица','SmileList':'Смайлы','HeaderList':'Формат','FontList':'Шрифт','FontSizeList':'Размер шрифта','BackColor':'Цвет фона','ForeColor':'Цвет шрифта','Video':'Видео','InsertVideo':'Вставить видео','EditVideo':'Редактировать видео','VideoProps':'Параметры видео','VideoPath':'Путь к видеофайлу','VideoPreviewPath':'Путь к рисунку предпросмотра','VideoAutoplay':'Автоматически начать проигрывать','VideoVolume':'Уровень громкости','LinkProps':'Параметры ссылки','LinkText':'Текст ссылки','LinkHref':'Адрес ссылки','LinkTitle':'Всплывающая подсказка','LinkTarget':'Открыть ссылку в ','LinkTarget_def':'- не указывать - ','LinkTarget_blank':'новом окне','LinkTarget_parent':'родительском окне','LinkTarget_self':'этом окне','LinkTarget_top':'самом наружном','AnchorProps':'Параметры якоря','AnchorName':'Название якоря','ImageProps':'Параметры изображения','ImageSrc':'Путь к изображению','ImageTitle':'Всплывающая подсказка','ImgAlign':'Выравнивание','ImgAlignTop':'по верхней границе','ImgAlignRight':'справа','ImgAlignBottom':'по нижней границе','ImgAlignLeft':'слева','ImgAlignMiddle':'по центру','ImageSizing':'Размеры (Ш х В)','ImageSaveProp':'Сохранять пропорции','ImagePreview':'Предпросмотр','Normal':'Обычный','Heading':'Заголовок','Preformatted':'Преформатирован','DefaultColor':'По умолчанию','DragFloatingToolbar':'Панель инструментов','Quote':'Оформление текста в виде цитаты','InsertCode':'Оформление текста в виде кода','InsertCut':'Оформление текста предпросмотра','Translit':'Перекодировка транслит/латиница','CutTitle':'Ограничение текста предпросмотра','TableRows':'Строк','TableCols':'Столбцов','TableModel':'Макет','ListItems':'Элементы списка','AddLI':'Добавить пункт','AddLITitle':'Добавить пункт в список (Enter)','DelListItem':'Удалить пункт из списка','ResizerTitle':'Изменить размер','CodeDel':'Нажмите (Shift + Del) чтобы удалить весь фрагмент кода','OnPasteProcessing':'Идет обработка вставленного текста...'});
+								BX.loadScript(["/bitrix/js/fileman/light_editor/le_dialogs.js?1634128872", "/bitrix/js/fileman/light_editor/le_controls.js?1634128872", "/bitrix/js/fileman/light_editor/le_toolbarbuttons.js?1634128872", "/bitrix/js/fileman/light_editor/le_core.js?1634128872"], _lheScriptloaded);
+			}
+			else
+			{
+				_lheScriptloaded();
+			}
+		}
+
+					BX.ready(function(){LoadLHE_LHEBlogCom();});
+		
+		</script><script>
+function insertBlogImageFile(id)
+{
+	img = BX.findChild(BX('wd-doc'+id), {'tag': 'img'}, true, false);
+	src = img.getAttribute('rel');
+	imageId = id+'file';
+	pLEditor = window.oBlogComLHE;
+	if (!pLEditor.arBlogImages[imageId])
+	{
+		pLEditor.arBlogImages[imageId] = {
+						src : src,
+						pTitle: ""
+					};
+	}
+	pLEditor.SetFocus();
+	InsertBlogImage(imageId);
+}
+
+BX.ready(function() {
+	BX.addCustomEvent(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), 'OnFileUploadSuccess', function(result, obj){
+		if(BX.findChild(BX('form_comment'), {'attr': {id: 'upload-cid'}}, true, false))
+			BX.findChild(BX('form_comment'), {'attr': {id: 'upload-cid'}}, true, false).value = obj.CID;
+
+		if(result.element_content_type.substr(0,6) == 'image/')
+		{
+			img = BX.findChild(BX('wd-doc'+result.element_id), {'tag': 'img'}, true, false);
+
+			el = BX.findChild(BX('wd-doc'+result.element_id), {'className': 'feed-add-img-wrap'}, true, false);
+			BX.bind(el, "click", function(){insertBlogImageFile(result.element_id);});
+			el.style.cursor = "pointer";
+			el.title = "Вставить изображение в сообщение";
+			el = BX.findChild(BX('wd-doc'+result.element_id), {'className': 'feed-add-img-title'}, true, false);
+			BX.bind(el, "click", function(){insertBlogImageFile(result.element_id);});
+			el.style.cursor = "pointer";
+			el.title = "Вставить изображение в сообщение";
+			insertBlogImageFile(result.element_id);
+		}
+	});
+
+	BX.addCustomEvent(BX('blog-comment-user-fields-UF_BLOG_COMMENT_DOC'), 'OnFileUploadRemove', function(result){
+		if(BX.findChild(BX('wd-doc'+result), {'tag': 'img'}, true, false))
+		{
+			pLEditor = window.oBlogComLHE;
+			pLEditor.SaveContent();
+			content = pLEditor.GetContent();
+			content = content.replace(new RegExp('\\[IMG ID='+result+'file\\]','g'), '');
+			pLEditor.SetContent(content);
+			pLEditor.SetEditorContent(pLEditor.content);
+			pLEditor.SetFocus();
+			pLEditor.AutoResize();
+		}
+	});
+});
+</script> <div class="form-group captcha-row clearfix">
+<label><span>Введите код&nbsp;<span class="star">*</span></span></label>
+<div class="captcha_image">
+<img data-lazyload src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="/bitrix/tools/captcha.php?captcha_code=0f797a874143d4b68e612d28eb49cf9f" class="lazyload captcha_img" width="180" height="40" id="captcha" border="0" />
+<input type="hidden" name="captcha_code" id="captcha_code" value="0f797a874143d4b68e612d28eb49cf9f" />
+<div class="captcha_reload"></div>
+</div>
+<div class="captcha_input">
+<input type="text" class="inputtext captcha" name="captcha_word" id="captcha_word" size="30" maxlength="50" value="" required tabindex="7"/>
+</div>
+</div>
+<div class="blog-comment-buttons-wrapper">
+<input tabindex="10" class="btn btn-default" value="Отправить" type="button" name="sub-post" id="post-button" onclick="submitComment()">
+</div>
+</div>
+<input type="hidden" name="blog_upload_cid" id="upload-cid" value="">
+</form>
+</div>
+</div>
+</div>
+<div class="blog-add-comment"><a class="btn btn-default white" href="javascript:void(0)">Добавить комментарий</a></div>
+<a name="0"></a>
+<div id="form_comment_0">
+<div id="err_comment_0"></div>
+<div id="form_comment_0"></div>
+<div id="new_comment_cont_0"></div>
+<div id="new_comment_0" style="display:none;"></div>
+</div>
+</div>
+</div>
